@@ -3,6 +3,17 @@ import { Table, Button } from 'reactstrap';
 
 
 class App extends Component {
+  state = {
+    books: [],
+  }
+  componentWillMount() {
+    axios.post('http://localhost:3000/books').then((response) => {
+      this.state({
+        books: response.data
+      })
+    });
+  }
+
   render() {
     return (
       <div className="App container">
@@ -27,7 +38,7 @@ class App extends Component {
 
                 <Button color="success" size="sm" className="mr-2">Edit</Button>
 
-                <Button color="danger" size="sm" className="mr-2">Delete</Button>
+                <Button color="danger" size="sm">Delete</Button>
 
               </td>
 
