@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 
 
 class App extends Component {
@@ -25,9 +25,9 @@ class App extends Component {
 
               <td>
 
-                <button color="success" size="sm" className="mr-2">Edit</button>
+                <Button color="success" size="sm" className="mr-2">Edit</Button>
 
-                <button color="danger" size="sm" className="mr-2">Delete</button>
+                <Button color="danger" size="sm" className="mr-2">Delete</Button>
 
               </td>
 
