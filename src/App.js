@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Table, Button } from 'reactstrap';
+import { Table, Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
 
 
 class App extends Component {
@@ -29,10 +29,43 @@ class App extends Component {
         </tr>
       )
     });
+
     return (
       <div className="App container">
-
         <h1>Books App</h1>
+        <Button className="my-3" color="primary" onClick={this.toggleNewBookModal.bind(this)}>Add New Book</Button>
+
+        <Modal isOpen={this.state.newBookModal} toggle={this.toggleNewBookModal.bind(this)}>
+          <ModalHeader toggle={this.toggleNewBookModal.bind(this)}>Add a new book</ModalHeader>
+          <ModalBody>
+            <FormGroup>
+              <Label for="title">Title</Label>
+              <Input id="title" value={this.state.newBookData.title} onChange={(e) => {
+                let { newBookData } = this.state;
+
+                newBookData.title = e.target.value;
+
+                this.setState({ newBookData });
+              }} />
+            </FormGroup>
+            <FormGroup>
+              <Label for="rating">Rating</Label>
+              <Input id="rating" value={this.state.newBookData.rating} onChange={(e) => {
+                let { newBookData } = this.state;
+
+                newBookData.rating = e.target.value;
+
+                this.setState({ newBookData });
+              }} />
+            </FormGroup>
+
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.addBook.bind(this)}>Add Book</Button>{' '}
+            <Button color="secondary" onClick={this.toggleNewBookModal.bind(this)}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+
 
         <Table>
           <thead>
