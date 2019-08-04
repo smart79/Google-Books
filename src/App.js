@@ -6,6 +6,17 @@ import { Table, Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, L
 class App extends Component {
   state = {
     books: [],
+    newBookData: {
+      title: '',
+      rating: ''
+    },
+    editBookData: {
+      id: '',
+      title: '',
+      rating: ''
+    },
+    newBookModal: false,
+    editBookModal: false
   }
   componentWillMount() {
     axios.post('http://localhost:3000/books').then((response) => {
@@ -14,7 +25,11 @@ class App extends Component {
       })
     });
   }
-
+  toggleNewBookModal() {
+    this.setState({
+      newBookModal: true
+    });
+  }
   render() {
     let books = this.state.books.map((book) => {
       return (
