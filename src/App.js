@@ -16,8 +16,24 @@ class App extends Component {
   }
 
   render() {
+    let books = this.state.books.map((book) => {
+      return (
+        <tr key={book.id}>
+          <td>{book.id}</td>
+          <td>{book.title}</td>
+          <td>{book.rating}</td>
+          <td>
+            <Button color="success" size="sm" className="mr-2">Edit</Button>
+            <Button color="danger" size="sm" >Delete</Button>
+          </td>
+        </tr>
+      )
+    });
     return (
       <div className="App container">
+
+        <h1>Books App</h1>
+
         <Table>
           <thead>
             <tr>
@@ -29,25 +45,12 @@ class App extends Component {
           </thead>
 
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Book Title</td>
-
-              <td>2.5</td>
-
-              <td>
-
-                <Button color="success" size="sm" className="mr-2">Edit</Button>
-
-                <Button color="danger" size="sm">Delete</Button>
-
-              </td>
-
-            </tr>
+            {books}
           </tbody>
         </Table>
       </div>
     );
   }
 }
+
 export default App;
