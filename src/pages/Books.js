@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
 import SearchForm from "../components/SearchForm";
 import BookInfo from "../components/BookInfo";
 import Card from "../components/Card";
+import { Col, Row, Container } from "../components/Grid";
 
 class Books extends Component {
   state = {
@@ -51,7 +51,6 @@ class Books extends Component {
     event.preventDefault();
     this.searchBooks(this.state.search);
   };
-
   render() {
     return (
       <Container fluid>
@@ -60,10 +59,10 @@ class Books extends Component {
             <Card>
               <h1>Welcome To React Google Book Search</h1>
               <SearchForm
-              value={this.state.search}
-              handleInputChange={this.handleInputChange}
-              handleFormSubmit={this.handleFormSubmit}
-            />
+                value={this.state.search}
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}
+              />
             </Card>
 
           </Col>
