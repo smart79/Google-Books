@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Jumbotron, Input, FormGroup, Label, Modal, ModalHeader, ModalBody, ModalFooter, Table, Button } from 'reactstrap';
+import { Jumbotron, Input, InputGroup, InputGroupAddon, FormGroup, Label, Modal, ModalHeader, ModalBody, ModalFooter, Table, Button } from 'reactstrap';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
@@ -174,12 +174,16 @@ class App extends Component {
 
         <div>
           <Jumbotron>
-            <h1 className="display-3">Hello, world!</h1>
-            <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+            <h1 className="display-3">(React)Google Books Search</h1>
             <hr className="my-2" />
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p className="lead">Search for and Save Books of Interest</p>
             <p className="lead">
-              <Button color="primary">Learn More</Button>
+              <InputGroup>
+                <Input placeholder="username" />
+                <InputGroupAddon addonType="append">
+                  <Button color="primary">Search</Button>
+                </InputGroupAddon>
+              </InputGroup>
             </p>
           </Jumbotron>
         </div>
