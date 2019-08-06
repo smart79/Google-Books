@@ -8,12 +8,12 @@ const BookDetail = props => {
         <p style={{ fontSize: "30px" }}>{props.title}</p>
         <p><strong>Author(s):</strong> {props.authors}</p>
         <p><strong>Google Books Link:</strong> <a href={props.link} target={"_blank"} >{props.title}</a></p>
-        <button onClick={props.handleSaveBook} className="btn btn-primary save-btn" style={{ marginBottom: "30px"}}>
+        <button onClick={props.handleSaveBook} className="btn btn-info save-btn" style={{ marginBottom: "30px" }}>
           Save Book
         </button>
       </div>
       <div className="col-md-8" style={{ float: "right", marginTop: "20px" }}>
-        <p style={{ marginBottom: "30px"}}><strong>Description:</strong> {props.description}</p>
+        <p style={{ marginBottom: "30px" }}><strong>Description:</strong> {props.description}</p>
       </div>
       <hr style={{ clear: "both" }} />
     </span>
