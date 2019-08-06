@@ -57,7 +57,15 @@ class Books extends Component {
         <Row>
           <Col size="md-12">
             <Card>
-              <h1>Welcome To React Google Book Search</h1>
+              <h1><strong>(React) Google Books Search</strong></h1>
+              <p>Search for and Save Books of Interest</p>
+            </Card>
+
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-12">
+            <Card>
               <SearchForm
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}

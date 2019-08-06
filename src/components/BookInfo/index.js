@@ -13,10 +13,10 @@ const BookInfo = props => {
         <p><strong>Author(s):</strong> {props.authors}</p>
 
         <p style={{ marginBottom: "30px" }}><strong>Description:</strong> {props.description}</p>
-        <a href={props.link} target={"_blank"} ><button className="btn btn-primary" style={{ marginBottom: "30px" }}>
+        <a href={props.link} target={"_blank"} ><button className="btn btn-info" style={{ marginBottom: "30px" }}>
           View
               </button></a>
-        <button onClick={props.handleSaveBook} className="btn btn-primary" style={{ marginBottom: "30px", marginLeft: "20px" }}>
+        <button onClick={props.handleSaveBook} className="btn btn-info" style={{ marginBottom: "30px", marginLeft: "20px" }}>
           Save
               </button>
 
