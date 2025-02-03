@@ -17,8 +17,11 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
+// Use MongoDB Atlas if running on Render, otherwise use local MongoDB
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
