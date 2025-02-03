@@ -1,7 +1,8 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
+require('dotenv').config();// ✅ Load environment variables
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -17,7 +18,13 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("✅ Connected to MongoDB Atlas"))
+.catch(err => console.error("❌ MongoDB connection error:", err));
+
 
 // Start the API server
 app.listen(PORT, function () {
