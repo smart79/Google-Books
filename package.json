@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.19.2",
-    "bootstrap": "^4.6.2",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "3.0.1",
+    "react-scripts": "^3.0.1",
     "reactstrap": "^8.10.1"
   },
   "scripts": {
